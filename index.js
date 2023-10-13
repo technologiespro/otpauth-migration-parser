@@ -50,8 +50,14 @@ const parser = async (sourceUrl) => {
     throw new Error("source url doesn't contain otpauth data");
   }
 
+  /*
   const protobufRoot = await protobufPromise(
     path.join(__dirname, "otpauth-migration.proto")
+  );
+   */
+
+  const protobufRoot = await protobufPromise(
+      path.join("otpauth-migration.proto")
   );
 
   const migrationPayload = protobufRoot.lookupType("MigrationPayload");
